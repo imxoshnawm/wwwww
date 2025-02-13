@@ -1,0 +1,17 @@
+{
+    "projects": [{
+        "id": 1,
+        "title": "پڕۆژەی یەکەم",
+        "description": "...",
+        "image": "project1.jpg",
+        "date": "2025-01-01",
+        "link": "..."
+    }],
+    "reports": [{
+        "id": 101,
+        "title": "ڕاپۆرتی یەکەم",
+        "description": "...",
+        "image": "report1.jpg",
+        "date": "2025-02-01"
+    }]
+}

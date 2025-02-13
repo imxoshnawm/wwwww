@@ -1,0 +1,500 @@
+:root {
+    --primary: #0a192f;
+    --secondary: #64ffda;
+    --background: #0f172a;
+    --text: #ccd6f6;
+    --text-secondary: #8892b0;
+    --card-bg: rgba(2, 12, 27, 0.7);
+    --hover: rgba(100, 255, 218, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.6;
+}
+
+
+/* Header */
+
+.header {
+    position: fixed;
+    width: 100%;
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+
+/* Hero Section */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-content {
+    text-align: right;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, var(--secondary), #4fd1c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+
+/* لەناو style.css */
+
+.report-card {
+    border-left: 4px solid #4fd1c5 !important;
+}
+
+.report-card h3 {
+    color: #4fd1c5 !important;
+}
+
+
+/* لەناو style.css زیادبکە */
+
+.report-card {
+    border-left: 4px solid #4fd1c5;
+}
+
+.report-card h3 {
+    color: #4fd1c5 !important;
+}
+
+
+/* Projects & Reports Section */
+
+.projects {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.item-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 1.5rem;
+}
+
+.item-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary);
+}
+
+.item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+
+/* About Section */
+
+.about {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+
+/* CV Section */
+
+.cv-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cv-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.cv-sidebar {
+    background: rgba(2, 12, 27, 0.9);
+    padding: 2rem;
+    border-right: 2px solid var(--secondary);
+}
+
+.profile-card {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--secondary);
+}
+
+.cv-download {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.download-cv {
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.download-cv:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Contact Section */
+
+.contact {
+    padding: 6rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(2, 12, 27, 0.7);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    border-radius: 6px;
+    color: var(--text);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+
+.submit-btn {
+    background: var(--secondary);
+    color: var(--primary);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary);
+    color: var(--text-secondary);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .hero-content {
+        text-align: center;
+    }
+    .cv-container {
+        grid-template-columns: 1fr;
+    }
+    .cv-sidebar {
+        border-right: none;
+        border-bottom: 2px solid var(--secondary);
+    }
+}
+
+
+/* ======================== */
+
+
+/* Base Variables & Styles */
+
+
+/* ======================== */
+
+:root {
+    --primary: #0a192f;
+    --secondary: #64ffda;
+    --background: #0f172a;
+    --text: #ccd6f6;
+    --text-secondary: #8892b0;
+    --card-bg: rgba(2, 12, 27, 0.7);
+    --hover: rgba(100, 255, 218, 0.1);
+}
+
+
+/* ======================== */
+
+
+/* Language Toggle Styles */
+
+
+/* ======================== */
+
+.language-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 2000;
+    animation: slideDown 0.5s ease-out;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: var(--secondary);
+    color: var(--primary);
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(100, 255, 218, 0.3);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(100, 255, 218, 0.2);
+    background: linear-gradient(135deg, var(--secondary) 0%, #4fd1c5 100%);
+}
+
+
+/* ======================== */
+
+
+/* RTL Layout Adjustments */
+
+
+/* ======================== */
+
+html[lang="ku"] {
+    direction: rtl;
+}
+
+
+/* Navigation Adjustments */
+
+html[lang="ku"] .nav-links {
+    padding-right: 0;
+    padding-left: 2rem;
+    flex-direction: row-reverse;
+}
+
+
+/* Hero Section */
+
+html[lang="ku"] .hero-content {
+    text-align: left;
+}
+
+
+/* CV Section */
+
+html[lang="ku"] .cv-container {
+    direction: rtl;
+}
+
+html[lang="ku"] .cv-sidebar {
+    border-right: none;
+    border-left: 2px solid var(--secondary);
+}
+
+
+/* Contact Form */
+
+html[lang="ku"] .contact-form input,
+html[lang="ku"] .contact-form textarea {
+    text-align: right;
+    padding-right: 1.5rem;
+}
+
+
+/* Footer */
+
+html[lang="ku"] .footer {
+    direction: rtl;
+}
+
+
+/* General Layout */
+
+html[lang="ku"] .skills-grid,
+html[lang="ku"] .projects-grid {
+    direction: rtl;
+}
+
+
+/* Position Adjustments */
+
+html[lang="ku"] .language-toggle {
+    right: auto;
+    left: 2rem;
+}
+
+
+/* ======================== */
+
+
+/* Responsive Design */
+
+
+/* ======================== */
+
+@media (max-width: 768px) {
+    .language-toggle {
+        top: 1rem;
+        right: 1rem;
+    }
+    html[lang="ku"] .language-toggle {
+        left: 1rem;
+    }
+    .lang-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    html[lang="ku"] .nav-links {
+        padding-left: 1rem;
+        gap: 1.5rem;
+    }
+}
+
+
+/* ======================== */
+
+
+/* Animations */
+
+
+/* ======================== */
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

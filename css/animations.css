@@ -1,0 +1,247 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+/* Hero Section Animations */
+
+.hero-content h1 {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+.hero-content p {
+    animation: slideInLeft 1s ease-out 0.3s forwards;
+}
+
+
+/* Project Cards Animation */
+
+.item-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.item-card:nth-child(n) {
+    animation-delay: calc(0.1s * var(--i));
+}
+
+
+/* Tech Icons Animation */
+
+.tech-icon {
+    animation: float 6s ease-in-out infinite;
+}
+
+
+/* Additional Section Animations */
+
+.about-content {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.skills-container {
+    animation: slideInRight 1s ease-out 0.3s forwards;
+}
+
+.cv-container {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+
+/* Contact Form Animations */
+
+.contact-form {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.form-group {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.form-group:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+
+/* Hover Animations */
+
+.item-card:hover .item-image {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.tech-icon:hover {
+    animation: none;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Scroll Reveal Animations */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Loading Animation */
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+
+/* ================ */
+
+
+/* Keyframe Animations */
+
+
+/* ================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradientPulse {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* ================ */
+
+
+/* Animation Classes */
+
+
+/* ================ */
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.gradient-pulse {
+    background: linear-gradient(45deg, var(--secondary), #4fd1c5);
+    background-size: 200% 200%;
+    animation: gradientPulse 4s ease infinite;
+}

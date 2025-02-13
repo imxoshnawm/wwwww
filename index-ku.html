@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پۆرتفۆلیۆی من</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <div class="language-toggle">
+        <a href="index-en.html" class="lang-btn">Switch to English</a>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">ناوی تۆ</div>
+            <ul class="nav-links">
+                <li><a href="#home">سەرەکی</a></li>
+                <li><a href="#projects">پڕۆژەکان</a></li>
+                <li><a href="#reports">ڕاپۆرتەکان</a></li>
+                <li><a href="#about">دەربارە</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#contact">پەیوەندی</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="gradient-text">بەخێربێن بۆ پۆرتفۆلیۆی من</h1>
+                <p>گەشەپێدەری پڕۆگرام و شارەزای AI و ڕۆبۆتیک</p>
+                <div class="tech-stack">
+                    <img src="/api/placeholder/40/40" alt="Python" class="tech-icon">
+                    <img src="/api/placeholder/40/40" alt="AI" class="tech-icon">
+                    <img src="/api/placeholder/40/40" alt="Robotics" class="tech-icon">
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2 class="section-title">پڕۆژەکانم</h2>
+            <div class="projects-grid" id="projectsContainer">
+                <!-- پڕۆژەکان بە شێوەی داینامیکی بار دەبن -->
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="projects">
+            <h2 class="section-title">ڕاپۆرتەکانم</h2>
+            <div class="projects-grid" id="reportsContainer">
+                <!-- ڕاپۆرتەکان بە شێوەی داینامیکی بار دەبن -->
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about-content">
+                <h2 class="section-title">دەربارەی من</h2>
+                <div class="about-grid">
+                    <div class="about-text"></div>
+                    <div class="skills-container">
+                        <h3>لێهاتووییەکان</h3>
+                        <div class="skills-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv" class="cv-section">
+            <h2 class="section-title">CV</h2>
+            <div class="cv-container">
+                <div class="cv-sidebar">
+                    <div class="profile-card">
+                        <img src="/api/placeholder/150/150" alt="Profile" class="profile-image">
+                        <h3>ناوی تۆ</h3>
+                        <p class="title">پیشەی تۆ</p>
+                    </div>
+                    <div class="contact-info">
+                        <h4>پەیوەندی</h4>
+                        <ul>
+                            <li><span class="icon">📧</span> you@example.com</li>
+                            <li><span class="icon">📱</span> ژمارەی مۆبایل</li>
+                            <li><span class="icon">📍</span> شوێن</li>
+                        </ul>
+                    </div>
+                    <div class="skills-list">
+                        <h4>لێهاتووییەکان</h4>
+                        <!-- لێهاتووییەکان بە شێوەی داینامیکی بار دەبن -->
+                    </div>
+                </div>
+                <div class="cv-main">
+                    <div class="experience-section">
+                        <h3>ئەزموون</h3>
+                        <!-- ئەزموونەکان داینامیکی بار دەبن -->
+                    </div>
+                    <div class="education-section">
+                        <h3>خوێندن</h3>
+                        <!-- خوێندنی داینامیکی بار دەبن -->
+                    </div>
+                </div>
+            </div>
+            <div class="cv-download">
+                <a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID" class="download-cv" download>دانلود CV</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2 class="section-title">پەیوەندیم پێوە بکە</h2>
+            <div class="contact-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="ناو" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="ئیمەیڵ" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="نامەکەت" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">ناردن</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>مافی پارێزراوە &copy; 2025</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پەڕەی بەڕێوەبردن 🛠️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --primary: #0a192f;
+            --secondary: #64ffda;
+            --background: #0f172a;
+            --text: #ccd6f6;
+            --card-bg: rgba(2, 12, 27, 0.7);
+        }
+        
+        body {
+            background: var(--background);
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            padding: 2rem;
+            margin: 0;
+        }
+        
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .admin-nav {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 1rem;
+        }
+        
+        .admin-tab {
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .admin-tab:hover {
+            color: var(--secondary);
+        }
+        
+        .admin-tab.active {
+            border-color: var(--secondary);
+        }
+        /* نوێ: دیزاینی تابی زمانەکان */
+        
+        .form-language-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .lang-tab {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            background: rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .lang-tab.active {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .language-fields {
+            position: relative;
+            min-height: 400px;
+        }
+        
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+        
+        .admin-form {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(10, 25, 47, 0.5);
+            border: 1px solid var(--secondary);
+            color: var(--text);
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            font-family: inherit;
+        }
+        
+        .file-upload-group {
+            border: 2px dashed var(--secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        .file-upload-group input[type="file"] {
+            display: none;
+        }
+        
+        .custom-file-upload {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .custom-file-upload:hover {
+            transform: translateY(-2px);
+        }
+        
+        button {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .items-list {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+        
+        .item-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .item-card h3 {
+            margin: 0 0 1rem 0;
+            color: var(--secondary);
+        }
+        
+        .item-card p {
+            margin: 0.5rem 0;
+        }
+        
+        .actions {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .actions button {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-container">
+        <h1>پەڕەی بەڕێوەبردن 🛠️</h1>
+
+        <nav class="admin-nav">
+            <div class="admin-tab active" data-tab="projects">پڕۆژەکان</div>
+            <div class="admin-tab" data-tab="reports">ڕاپۆرتەکان</div>
+        </nav>
+
+        <!-- Projects Section -->
+        <section id="projects" class="admin-section active">
+            <form id="projectForm" class="admin-form">
+                <h2>پڕۆژەی نوێ زیاد بکە</h2>
+
+                <!-- نوێ: تابی زمانی -->
+                <div class="form-language-tabs">
+                    <div class="lang-tab active" data-lang="ku">کوردی</div>
+                    <div class="lang-tab" data-lang="en">English</div>
+                </div>
+
+                <div class="language-fields">
+                    <!-- Kurdish Fields -->
+                    <div class="lang-content active" data-lang="ku">
+                        <div class="form-group">
+                            <label for="projectTitleKu">سەردێڕ (کوردی)</label>
+                            <input type="text" id="projectTitleKu" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectShortDescKu">پێناسەی کورت (کوردی)</label>
+                            <textarea id="projectShortDescKu" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectFullDescKu">پێناسەی درێژ (کوردی)</label>
+                            <textarea id="projectFullDescKu" rows="6"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- English Fields -->
+                    <div class="lang-content" data-lang="en">
+                        <div class="form-group">
+                            <label for="projectTitleEn">Title (English)</label>
+                            <input type="text" id="projectTitleEn" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectShortDescEn">Short Description (English)</label>
+                            <textarea id="projectShortDescEn" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectFullDescEn">Full Description (English)</label>
+                            <textarea id="projectFullDescEn" rows="6"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>پەڕگەی وێنە</label>
+                    <div class="file-upload-group">
+                        <input type="file" id="projectImage" accept="image/*">
+                        <label for="projectImage" class="custom-file-upload">وێنە هەڵبژێرە</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ڤیدیۆ</label>
+                    <div class="file-upload-group">
+                        <input type="file" id="projectVideo" accept="video/*">
+                        <label for="projectVideo" class="custom-file-upload">ڤیدیۆ هەڵبژێرە</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>پەڕگەکانی تر</label>
+                    <div class="file-upload-group">
+                        <input type="file" id="projectFiles" multiple>
+                        <label for="projectFiles" class="custom-file-upload">پەڕگەکان هەڵبژێرە</label>
+                    </div>
+                </div>
+
+                <button type="submit">پاشەکەوتکردن</button>
+            </form>
+
+            <div class="items-list" id="projectsList"></div>
+        </section>
+
+        <!-- Reports Section -->
+        <!-- Reports Section -->
+        <section id="reports" class="admin-section">
+            <form id="reportForm" class="admin-form">
+                <h2>ڕاپۆرتی نوێ زیاد بکە</h2>
+
+                <!-- تابی زمانی -->
+                <div class="form-language-tabs">
+                    <div class="lang-tab active" data-lang="ku">کوردی</div>
+                    <div class="lang-tab" data-lang="en">English</div>
+                </div>
+
+                <div class="language-fields">
+                    <!-- خانەکانی کوردی -->
+                    <div class="lang-content active" data-lang="ku">
+                        <div class="form-group">
+                            <label for="reportTitleKu">سەردێڕ (کوردی)</label>
+                            <input type="text" id="reportTitleKu" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportShortDescKu">پێناسەی کورت (کوردی)</label>
+                            <textarea id="reportShortDescKu" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportFullDescKu">پێناسەی درێژ (کوردی)</label>
+                            <textarea id="reportFullDescKu" rows="6"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- خانەکانی ئینگلیزی -->
+                    <div class="lang-content" data-lang="en">
+                        <div class="form-group">
+                            <label for="reportTitleEn">Title (English)</label>
+                            <input type="text" id="reportTitleEn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportShortDescEn">Short Description (English)</label>
+                            <textarea id="reportShortDescEn" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportFullDescEn">Full Description (English)</label>
+                            <textarea id="reportFullDescEn" rows="6"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>پەڕگەی وێنە</label>
+                    <div class="file-upload-group">
+                        <input type="file" id="reportImage" accept="image/*">
+                        <label for="reportImage" class="custom-file-upload">وێنە هەڵبژێرە</label>
+                    </div>
+                </div>
+
+                <button type="submit">پاشەکەوتکردن</button>
+            </form>
+
+            <div class="items-list" id="reportsList"></div>
+        </section>
+    </div>
+
+    <script>
+        // Authentication
+        const ADMIN_PASSWORD = "id_xoshnawm12";
+        const enteredPassword = prompt("تکایە وشەی نهێنیی ئەدمین بنووسە:");
+        if (enteredPassword !== ADMIN_PASSWORD) {
+            window.location.href = "language.html";
+        }
+
+        // گۆڕینی فۆڕمی زمان
+        document.querySelectorAll('.lang-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const lang = tab.dataset.lang;
+                tab.parentElement.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const content = tab.closest('.admin-form').querySelector(`.lang-content[data-lang="${lang}"]`);
+                content.parentElement.querySelectorAll('.lang-content').forEach(c => c.classList.remove('active'));
+                content.classList.add('active');
+            });
+        });
+
+        // ========== فەنکشنی handleSubmit ==========
+        async function handleSubmit(type, e) {
+            e.preventDefault();
+            const formData = new FormData();
+
+            // دیاریکردنی خانەکان بەپێی جۆر
+            const titleKuField = `${type}TitleKu`;
+            const shortDescKuField = `${type}ShortDescKu`;
+            const fullDescKuField = `${type}FullDescKu`;
+            const titleEnField = `${type}TitleEn`;
+            const shortDescEnField = `${type}ShortDescEn`;
+            const fullDescEnField = `${type}FullDescEn`;
+
+            const fields = {
+                ku: {
+                    title: document.getElementById(titleKuField).value,
+                    shortDesc: document.getElementById(shortDescKuField).value,
+                    fullDesc: document.getElementById(fullDescKuField).value
+                },
+                en: {
+                    title: document.getElementById(titleEnField).value,
+                    shortDesc: document.getElementById(shortDescEnField).value,
+                    fullDesc: document.getElementById(fullDescEnField).value
+                }
+            };
+
+            // زیادکردنی زانیارییەکان
+            formData.append('title_ku', fields.ku.title);
+            formData.append('shortDescription_ku', fields.ku.shortDesc);
+            formData.append('description_ku', fields.ku.fullDesc);
+            formData.append('title_en', fields.en.title);
+            formData.append('shortDescription_en', fields.en.shortDesc);
+            formData.append('description_en', fields.en.fullDesc);
+
+            // File Uploads
+            const image = document.getElementById(`${type}Image`).files[0];
+            if (image) formData.append('image', image);
+
+            // تەنها پڕۆژەکان ڤیدیۆیان هەیە
+            if (type === 'projects') {
+                const video = document.getElementById(`${type}Video`).files[0];
+                if (video) formData.append('video', video);
+            }
+
+            try {
+                const response = await fetch(`http://localhost:3001/${type}`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    await displayItems(type);
+                    e.target.reset();
+                    alert('سەرکەوتووبوو!');
+                }
+            } catch (error) {
+                console.error('هەڵە:', error);
+                alert('هەڵەیەک ڕوویدا!');
+            }
+        }
+
+        // ========== فەنکشنی displayItems ==========
+        async function displayItems(type) {
+            try {
+                const response = await fetch(`http://localhost:3001/${type}`);
+                const items = await response.json();
+
+                const container = document.getElementById(`${type}List`);
+                container.innerHTML = items.map(item => `
+                    <div class="item-card ${type === 'reports' ? 'report-card' : ''}">
+                        <h3>${item.title_ku} / ${item.title_en}</h3>
+                        <p>${item.shortDescription_ku}</p>
+                        ${item.description_ku ? `<p>${item.description_ku}</p>` : ''}
+                        ${item.image ? `<img src="uploads/${item.image}" width="100%">` : ''}
+                        <div class="actions">
+                            <button onclick="editItem('${type}', ${item.id})">دەستکاری</button>
+                            <button onclick="deleteItem('${type}', ${item.id})">سڕینەوە</button>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('هەڵە لە بارکردنی داتا:', error);
+            }
+        }
+    
+        // ========== Event Listeners ==========
+        document.getElementById('projectForm').addEventListener('submit', (e) => handleSubmit('projects', e));
+        document.getElementById('reportForm').addEventListener('submit', (e) => handleSubmit('reports', e));
+    
+        // ========== بارکردنی سەرەتایی ==========
+        displayItems('projects');
+        displayItems('reports');
+    </script>
+</body>
+
+</html>
